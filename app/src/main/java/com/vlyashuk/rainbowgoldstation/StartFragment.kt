@@ -5,15 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import com.vlyashuk.rainbowgoldstation.databinding.FragmentMainBinding
 import com.vlyashuk.rainbowgoldstation.databinding.FragmentStartBinding
+import java.lang.Math.random
+import kotlin.random.Random
 
-class StartFragment : Fragment(R.layout.fragment_start) {
+class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding: FragmentStartBinding
         get() = _binding ?: throw RuntimeException("FragmentStartBinding? is null")
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,13 +26,23 @@ class StartFragment : Fragment(R.layout.fragment_start) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonStart.setOnClickListener {
-            Toast.makeText(context, "123", Toast.LENGTH_SHORT).show()
+        binding.btnBack.setOnClickListener {
+            MAIN.navController.navigate(R.id.action_startFragment_to_mainFragment)
         }
+        numberComputerView()
     }
 
-    companion object {
-        fun newInstance() = StartFragment()
+    private fun numberComputerView() {
+        val number = arrayOf(
+            "J321", "F435", "R356",
+            "I888", "P952", "Y545",
+            "H789", "C321", "T578",
+            "G875", "L653", "E342"
+        )
+        val arraySize = number.size
+        val rand = Random.nextInt(arraySize)
+        val name = "${number[rand]}"
+        binding.tvNumberComputer.text = name
     }
 
     override fun onDestroy() {

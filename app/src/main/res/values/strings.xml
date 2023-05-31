@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_start_screen">Rainbow goldstation</string>
     <string name="join_the_club">Join the club</string>
+    <string name="back">Back</string>
+    <string name="title_start_fragment">Your\nbattlestation\n# is:</string>
 </resources>
