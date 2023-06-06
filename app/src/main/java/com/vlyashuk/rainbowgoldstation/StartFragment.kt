@@ -32,7 +32,6 @@ class StartFragment : Fragment() {
 
         binding.btnStart.setOnClickListener {
             MAIN.navController.navigate(R.id.action_startFragment_to_playFragment)
-
         }
         numberComputerView()
     }

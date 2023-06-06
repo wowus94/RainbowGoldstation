@@ -37,12 +37,12 @@ class PlayFragment() : Fragment() {
 
         binding.tvTimer
 
-            handler.post(object : Runnable {
-                override fun run() {
-                    handler.postDelayed(this, 1000)
-                    updateTime()
-                }
-            })
+        handler.post(object : Runnable {
+            override fun run() {
+                handler.postDelayed(this, 1000)
+                updateTime()
+            }
+        })
 
         binding.btnStop.setOnClickListener {
             binding.tvTimer.setText("Finish!")

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_startFragment"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
@@ -35,4 +38,8 @@
             android:id="@+id/action_playFragment_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.vlyashuk.rainbowgoldstation.WebViewActivity"
+        android:label="WebViewActivity" />
 </navigation>
